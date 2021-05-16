@@ -372,9 +372,7 @@ int main(int argc, char **argv)
     if (haslog)
     {
         char *logFile = argv[2];
-        /*el::Loggers::configureFromGlobal(logFile);*/
-        LOG(INFO) << "got file: " << logFile;
-
+        
         // Load configuration from file
         el::Configurations conf(logFile);
         // Reconfigure single logger
@@ -382,6 +380,8 @@ int main(int argc, char **argv)
         // Actually reconfigure all loggers instead
         el::Loggers::reconfigureAllLoggers(conf);
         // Now all the loggers will use configuration from file
+
+        LOG(INFO) << "got file: " << logFile;
     }
     else
     {
