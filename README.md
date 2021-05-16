@@ -94,6 +94,13 @@ In order to use this miner with a stratum pool, a stratum proxy is needed.
 - In the miner's config file set node address to the proxy's address
  (by default this address is: ```{"node":"http://127.0.0.1:3000"}```)
 
+## Logging
+
+logging can be configured with a conf file command line example: miner ./config.json logger.conf
+a default file "logger.conf" is provided in the repository
+you can see some instructions on how to use it here (https://github.com/amrayn/easyloggingpp#using-configuration-file)
+
+
 
 # Donations and Support
 

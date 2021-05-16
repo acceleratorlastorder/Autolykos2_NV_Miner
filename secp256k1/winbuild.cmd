@@ -3,8 +3,11 @@ SET "LIBCURL_DIR=REPLACE_WITH_LIBCURL_FOLDER"
 SET "CUDA_COMPUTE_ARCH=61"
 SET "BLOCK_DIM=64"
 SET "WORKSPACE=0x800000"
-cd src
- 
+
+::create builds folder and logs
+mkdir builds\logs
+cd src 
+
 ::"c:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
  
 nvcc -use_fast_math -maxrregcount=128 -o ../builds/miner.exe -Xcompiler "/std:c++14" ^
@@ -20,6 +23,3 @@ nvcc -use_fast_math -maxrregcount=128 -o ../builds/miner.exe -Xcompiler "/std:c+
 
 cd ..
 ::SET PATH=%PATH%;C:\Program Files\NVIDIA Corporation\NVSMI
-
-
-
